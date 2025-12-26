@@ -1,0 +1,123 @@
+.section-padding {
+    padding: 10rem 0;
+}
+
+.section-header {
+    margin-bottom: 6rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-header h2 {
+    font-size: 3.5rem;
+    color: var(--color-text-main);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    font-family: var(--font-display);
+}
+
+.section-header p {
+    color: var(--color-text-muted);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+    position: relative;
+    padding-top: 2rem;
+}
+
+.step-card {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: white;
+    padding: 4rem 2.5rem;
+    border-radius: var(--radius-xl);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.step-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-premium);
+    border-color: var(--color-primary-light);
+}
+
+.step-icon {
+    width: 96px;
+    height: 96px;
+    background-color: var(--color-bg-subtle);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2.5rem;
+    color: var(--color-primary);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 2px solid transparent;
+}
+
+.step-card:hover .step-icon {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: white;
+    transform: scale(1.1) rotate(-8deg);
+    box-shadow: 0 20px 40px rgba(0, 85, 212, 0.2);
+}
+
+.step-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--color-text-main);
+    font-weight: 800;
+    font-family: var(--font-display);
+}
+
+.step-card p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* Sophisticated Connector Line */
+.step-connector {
+    position: absolute;
+    top: 70px;
+    left: calc(50% + 48px);
+    width: calc(100% - 96px);
+    height: 2px;
+    background: linear-gradient(to right, var(--color-primary-light) 0%, var(--color-border) 100%);
+    z-index: 0;
+    opacity: 0.3;
+}
+
+@media (max-width: 1024px) {
+    .steps-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .step-connector {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header h2 {
+        font-size: 2.75rem;
+    }
+
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+}

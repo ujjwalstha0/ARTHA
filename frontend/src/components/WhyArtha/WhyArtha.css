@@ -1,0 +1,67 @@
+.why-artha {
+    background-color: var(--color-bg-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-artha .feature-card {
+    padding: 3rem 2.5rem;
+    text-align: center;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: white;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.why-artha .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-premium);
+    border-color: var(--color-primary-light);
+}
+
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--color-bg-subtle);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    color: var(--color-primary);
+    transition: all 0.5s ease;
+}
+
+.feature-card:hover .feature-icon {
+    background: var(--color-primary);
+    color: white;
+    transform: rotate(10deg);
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+    font-weight: 800;
+    font-family: var(--font-display);
+    color: var(--color-text-main);
+}
+
+.feature-card p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .why-artha .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .why-artha .grid-4 {
+        grid-template-columns: 1fr;
+    }
+}

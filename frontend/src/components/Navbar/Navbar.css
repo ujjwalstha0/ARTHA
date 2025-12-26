@@ -1,0 +1,178 @@
+.navbar {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(9, 30, 66, 0.08);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.navbar-logo a:hover {
+    transform: scale(1.02);
+}
+
+.logo-img {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-links a {
+    color: var(--color-text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.2s;
+}
+
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: var(--color-primary);
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+    width: 100%;
+}
+
+.navbar-links a.active {
+    color: var(--color-primary);
+}
+
+.navbar-auth {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.btn-logout {
+    color: var(--color-text-muted);
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+
+.btn-logout:hover {
+    color: var(--color-error);
+    background-color: #FEF2F2;
+    border-color: #FECACA;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: block;
+        color: var(--color-primary);
+    }
+
+    .navbar-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: var(--shadow-md);
+    }
+
+    .navbar-menu.active {
+        transform: translateY(0);
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .navbar-auth {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .auth-buttons .btn {
+        width: 100%;
+    }
+}

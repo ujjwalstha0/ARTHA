@@ -1,0 +1,13 @@
+requests
+fastapi[standard]
+pydantic
+uvicorn[standard]
+fastapi-cli `
+reportlab
+easyocr
+deepface
+opencv-python
+openai-whisper
+moviepy
+imageio-ffmpeg
+tf-keras
